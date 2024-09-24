@@ -17,12 +17,11 @@ const { authenticateToken } = require("./utilities");
 app.use(express.json());
 
 app.use(
-    cors(
-        {
-            origin: "*",
-            
-        }
-    )
+    cors({
+        origin: "https://notes-app-6-frontend.onrender.com", // Allow only your live frontend
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        credentials: true // If you need to support cookies or sessions
+    })
 );
 
 
